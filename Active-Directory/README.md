@@ -16,11 +16,11 @@ Configuring a Windows Server to be a Domain Controller
 ## AD Structure
 
 ### Create OUs   
-![Screenshot of created OUs](https://github.com/WSU-kduncan/ceg2410-cybersmith-22/blob/0ed3e3fe47831d61d8cfbaa6d9b13fe4a44cbcff/Linux/Project4/images/ous.JPG)
+![Screenshot of created OUs](https://github.com/cybersmith22/portfolio/blob/4861715ef9a01a22439e12dedfe6123d84e40adb/Active-Directory/images/ous.JPG)
 
 ### Joining Users   
 
-![Screenshot of users in correct OUs](https://github.com/WSU-kduncan/ceg2410-cybersmith-22/blob/e99cf397826ce9d4b67e3531387026749914533c/Linux/Project4/images/users.JPG)
+![Screenshot of users in correct OUs](https://github.com/cybersmith22/portfolio/blob/4861715ef9a01a22439e12dedfe6123d84e40adb/Active-Directory/images/users.JPG)
 
 ### Joining Computers
 Steps to join a new Windows Server instance to the domain
@@ -35,7 +35,7 @@ Steps to join a new Windows Server instance to the domain
 9. Right Click the new system, select Move..., and select the [Domain] Computers
 10. The new system is now in the Domain and in the correct OU   
 
-![Screenshot of successfully joined computer](https://github.com/WSU-kduncan/ceg2410-cybersmith-22/blob/e99cf397826ce9d4b67e3531387026749914533c/Linux/Project4/images/joincomp.JPG)
+![Screenshot of successfully joined computer](https://github.com/cybersmith22/portfolio/blob/4861715ef9a01a22439e12dedfe6123d84e40adb/Active-Directory/images/joincomp.JPG)
 
 ### Creating Groups
 Security Groups with OUs
