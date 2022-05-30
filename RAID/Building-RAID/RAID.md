@@ -14,7 +14,7 @@
 ## Part 2 - Get Info
 
 - `sudo mdadm -D /dev/md0` checks RAID status
-![RAID status](https://github.com/WSU-kduncan/ceg2410-cybersmith-22/blob/8b45ed4d6d1fe410334cbad56a766ceae061637e/Linux/Project2/images/part2.JPG)
+![RAID status](https://github.com/cybersmith22/portfolio/blob/da6f55130daec7f02cfd46d6e29b28691f8ba304/RAID/Building-RAID/images/part2.JPG)
 - `State: clean` means that the RAID is working. Failing disk will be noted here and in the last section under `State`
 
 ## Part 3 - Mount to Directory 
@@ -31,13 +31,13 @@
 - `sudo mdadm --remove /dev/md127 /dev/xvdf` removes the failing  `/dev/xvdf` disk
 - `sudo mdadm -D /dev/md127` checks RAID status and the effect of the removed disk on RAID device
    - The RAID device still works, but is degraded and cannot suffer another disk failure
-   ![Effect of Failed Disk on RAID](https://github.com/WSU-kduncan/ceg2410-cybersmith-22/blob/5ebb5010ef94b368815ba572fc81ddab500c628a/Linux/Project2/images/part4.JPG)
+   ![Effect of Failed Disk on RAID](https://github.com/cybersmith22/portfolio/blob/da6f55130daec7f02cfd46d6e29b28691f8ba304/RAID/Building-RAID/images/part4.JPG)
 
 ## Part 5 - Rebuild It
 
 - `sudo mdadm --add /dev/md127 /dev/xvfg` adds a new device, `/dev/xvfg` to RAID
 - `sudo mdadm -D /dev/md127` verifys that the RAID device is rebuilt
-    ![Rebuilt RAID Array](https://github.com/WSU-kduncan/ceg2410-cybersmith-22/blob/5ebb5010ef94b368815ba572fc81ddab500c628a/Linux/Project2/images/part5.JPG)
+    ![Rebuilt RAID Array](https://github.com/cybersmith22/portfolio/blob/da6f55130daec7f02cfd46d6e29b28691f8ba304/RAID/Building-RAID/images/part5.JPG)
 
 ## Resources
 
