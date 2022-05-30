@@ -1,0 +1,90 @@
+# declare interpreter
+#! /bin/bash 
+
+# function one
+# Downloads a color scheme to ~/.vim/colors
+# Adds text to ~/.vimrc to enable color
+# Checks file / folder existence before recreating
+install-colorscheme () {
+	# checks for ~/.vim/colors directory 
+	if [[ -d "$HOME/.vim/colors" ]] 
+	then 
+		echo "found ~/.vim/colors directory!"
+	else # not found, create directory
+		echo "~/.vim/colors does not exist!"
+		echo "creating directory..."
+		mkdir -p ~/.vim/colors
+	fi # finish checking for directory
+	
+	# checks if cyberpunk.vim file exists
+	if [[ -f "$HOME/.vim/colors/cyberpunk-neon.vim" ]]
+	then
+		echo "cyberpunk-neon.vim is already downloaded!"
+	else # file does not exist, download to ~/.vim/colors
+		echo "downloading cyberpunk-neon.vim..."
+		wget -q -P ~/.vim/colors "https://raw.githubusercontent.com/Roboron3042/Cyberpunk-Neon/master/terminal/vim/cyberpunk-neon.vim"
+	fi # finish checking for vim file
+
+	# checks if ~/.vimrc exists
+	if [[ -f "$HOME/.vimrc" ]]
+	then
+		echo "found .vimrc file!"
+	else # file does not exist, creates .vimrc file
+		echo "creating .vimrc file..."
+		touch ~/.vimrc
+	fi # finish checking for vimrc file
+
+	echo "enabling colorsheme..."
+	# add text to ~/.vimrc to enable color
+	echo "set termguicolors" > ~/.vimrc
+	echo "colorscheme cyberpunk-neon" > ~/.vimrc
+	echo "colorscheme installed, open a file in vim to see!"
+
+}
+
+# function two
+# If script was run with root permissions
+# Install packages
+install-package () {
+	# checks for root permissions
+	if [[ "$EUID" -ne 0 ]]
+	then 
+		echo "Please run as root!"
+		exit
+	else # root permissions found
+		echo "installing packages..."
+		sudo apt install -y \ 
+			git \
+			vim \
+			sl \
+			cowsay \
+			fortune
+		echo "packages installed!"
+	fi # finish checking for root permissions
+}
+
+# Extra Credit
+# User menu, prompt user for action
+# Call the appropriate function
+PS3="What action would you like to perform? "
+options=("Change vim colorscheme" "Install packages" "Quit")
+COLUMNS=12 # fixes options on new lines
+select opt in "${options[@]}"
+do 
+	case $opt in
+		"Change vim colorscheme")
+			echo "changing vim colorscheme to cyberpunk"
+			install-colorscheme
+			;;
+		"Install packages")
+			echo "installing packages: git, vim, sl, cowsay, fortune"
+			install-package
+			;;
+		"Quit")
+			break
+			;;
+		*)
+			echo "invalid option $REPLY"
+			;;
+	esac
+done

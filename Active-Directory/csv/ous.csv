@@ -1,0 +1,11 @@
+Name,Path
+cybersmith Users,"dc=ad,dc=cybersmith,dc=com"
+Finance,"OU=cybersmith Users,dc=ad,dc=cybersmith,dc=com"
+HR,"OU=cybersmith Users,dc=ad,dc=cybersmith,dc=com"
+Engineers,"OU=cybersmith Users,dc=ad,dc=cybersmith,dc=com"
+Developers,"OU=cybersmith Users,dc=ad,dc=cybersmith,dc=com"
+cybersmith Computers,"dc=ad,dc=cybersmith,dc=com"
+Conference,"OU=cybersmith Computers,dc=ad,dc=cybersmith,dc=com"
+Secure,"OU=cybersmith Computers,dc=ad,dc=cybersmith,dc=com"
+Workstations,"OU=cybersmith Computers,dc=ad,dc=cybersmith,dc=com"
+cybersmith Servers,"dc=ad,dc=cybersmith,dc=com"

@@ -1,0 +1,24 @@
+FirstName,LastName,SamAccountName,OU1,OU2
+Sam,Adams,sadams,cybersmith Users,Engineers
+Bob,Baker,bbaker,cybersmith Users,Engineers
+John,Clark,jclark,cybersmith Users,Engineers
+Jim,Davis,jdavis,cybersmith Users,Developers
+Sue,Evans,sevans,cybersmith Users,Developers
+Mabel,Frank,mfrank,cybersmith Users,Developers
+Kylie,Ghosh,kghosh,cybersmith Users,Developers
+Sammy,Hills,shills,cybersmith Users,HR
+Steve,Irwin,sirwin,cybersmith Users,HR
+Jessy,Jones,jjones,cybersmith Users,Finance
+Kevin,Klein,kklein,cybersmith Users,Finance
+Max,Lopez,mlopez,cybersmith Users,Finance
+Sarah,Mason,smason,cybersmith Users,Developers
+Frank,Nalty,fnalty,cybersmith Users,Developers
+Izzie,Ochoa,iochoa,cybersmith Users,Developers
+Kelly,Patel,kpatel,cybersmith Users,Engineers
+Liz,Quinn,lquinn,cybersmith Users,Engineers
+Owen,Reily,oreily,cybersmith Users,Engineers
+Taylor,Trott,ttrott,cybersmith Users,Engineers
+James,Usman,jusman,cybersmith Users,Engineers
+Elsie,Smith,esmith,cybersmith Users,Engineers
+Waldo,Valdo,wvaldo,cybersmith Users,Developers
+Griffin,White,gwhite,cybersmith Users,Developers

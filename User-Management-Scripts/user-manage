@@ -1,0 +1,156 @@
+# identify interpreter 
+#! /bin/bash
+
+# Function 1: Add-Single 
+# Prompt user to enter username 
+# Create the user an account on the system with a password
+#   Challenge (not required): randomly generate the password. (pwgen)
+#   Challenge (not required): if username exists, skip
+# Add the user to a group, org 
+# Give the group permissions to the user's home directory 
+# Place account details (username and password) in an output file
+add-single () {
+    # prompt for username, save to variable 'username'
+    read -p 'Username: ' username
+
+    # check if user exists, if not add the user
+    if grep -q $username /etc/passwd;
+    then
+        echo "$username already exists!"
+    else
+        echo "creating user..."
+        # creates user using 'username' variable, disables password (created next with pwgen), 
+        # disables additional prompts, creates home directory (/home/$username)
+        sudo adduser $username --disabled-password --gecos "" --home /home/$username --quiet
+
+        # generates random password
+        echo "generating password..."
+        pass=$(pwgen -s -1)
+
+        # add the password for user
+        echo "setting password..."
+        echo -e "$pass\n$pass" | sudo passwd $username
+
+        # add user to group, org
+        echo "adding user to group 'org'..." 
+        sudo usermod -a -G org $username
+
+        # give group permissions to user's home directory
+        echo "setting user permissions..."
+        sudo chgrp -R org /home/$username
+        sudo chmod 770 /home/$username
+
+        # add account details to output file
+        echo "$username $pass" >> users.txt
+        echo "account successfully created!"
+    fi 
+}
+
+# Function 2: Remove-Single
+# Prompt user to enter a username
+# Delete the user account & home directory
+# Remove the user from group
+remove-single () {
+    # prompt for username
+    read -p 'Username: ' username 
+
+    # delete user account and home directory, removes user from group
+    echo "deleting user account and home directory..."
+    sudo deluser --remove-home $username --quiet
+    echo "user deleted!"
+}
+
+# Function 3: Add-Bulk
+# Prompt the user to enter a filename containing user names
+# For each user in the file:
+# Create the user an account on the system with a password
+#   Challenge (not required): randomly generate the password. (pwgen)
+#   Challenge (not required): if username exists, skip
+# Add the user to a group org, for example
+# Give the group permissions to the user's home directory 
+# Place account details (username and password) in an output file 
+add-bulk () {
+    # prompt for filename containing user names
+    read -p 'Filename of Usernames: ' file
+
+    # while reading each username (line) of file
+    while read -r username;
+    do 
+        # check if user exists, if not add the user
+        if grep -q $username /etc/passwd;
+        then
+            echo "$username already exists!"
+        else
+            # creates user using 'username' variable, disables password (created next with pwgen),
+            # disables additional prompts, creates home directory (/home/$username)
+            sudo adduser $username --disabled-password --gecos "" --home /home/$username --quiet
+
+            # generates random password
+            pass=$(pwgen -s -1)
+
+            # add the password for user
+            echo -e "$pass\n$pass" | sudo passwd $username
+
+            # add user to group, org
+            sudo usermod -a -G org $username
+
+            # give group permissions to user's home directory 
+            sudo chgrp -R org /home/$username
+            sudo chmod 770 /home/$username
+
+            # add account details to output file 
+            echo $username $pass >> users.txt
+            echo "User: $username created!"
+        fi
+    done < $file 
+}
+
+# Function 4: Remove-Bulk
+# Prompt the user to enter a filename containing user names
+# For each user in the file:
+#    Delete the user account & home directory
+#    Remove the user from group
+remove-bulk () {
+    # prompt for filename containing user names
+    read -p 'Filename of Usernames: ' file
+
+    while read -r username;
+    do 
+        # delete user account and home directory, removes user from group 
+        sudo deluser --remove-home $username --quiet
+        echo "$username deleted!"
+    done < $file
+}
+
+# Extra Credit
+# Instead of calling functions (nice, but hard to remember) create a menu that asks what the user would like to do.
+PS3="What action would you like to perform? "
+options=("Add Single User" "Remove Single User" "Bulk Add Users" "Bulk Remove Users" "Quit")
+COLUMNS=12 # enables options on new lines
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Add Single User")
+            echo "You Selected: Add Single User"
+            add-single
+            ;;
+        "Remove Single User")
+            echo "You Selected: Remove Single User"
+            remove-single
+            ;;
+        "Bulk Add Users")
+            echo "You Selected: Bulk Add Users"
+            add-bulk
+            ;;
+        "Bulk Remove Users")
+            echo "You Selected: Bulk Remove Users"
+            remove-bulk
+            ;;
+        "Quit")
+            break
+            ;;
+        *)
+            echo "invalid option $REPLY"
+            ;;
+    esac
+done

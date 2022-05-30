@@ -1,0 +1,30 @@
+---
+- name: Ansible Playbook to Create Users
+  hosts: linux # Defining the remote server inventory hosts group
+  # Defining the remote server where the ansible create user module will manage the objects
+  remote_user: ubuntu # Using Remote user as ububtu
+  tasks:
+
+  # name - Defines the username that is present or to create 
+  # groups - Adds users in secondary groups or use groups
+  # state: present - Creates a user or works with a user
+  # state: absent - Deletes a user
+  # shell - Specifies shell-type a use rcan work on
+  # home -Sets a user's home directory 
+  # createhome: yes - Create a home directory for a user
+  # createhome: no - Do not create a home directory for a user
+
+  # Creating the user Kaitlyn Smith
+    - name: Add the user 'Kaitlyn Smith' with a specific uid and a primary group of 'org'
+      ansible.builtin.user:
+        name: ksmith
+        comment: KaitlynSmith
+        uid: 1077
+        group: org
+        createhome: yes
+        home: /home/ksmith
+    - name: creating / checking group 'org' existence
+      group:
+        name: org
+        gid: 1001
+        state: present
