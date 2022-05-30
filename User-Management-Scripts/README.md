@@ -3,7 +3,7 @@
 ## What the Script Does
 
 - Prompts the user with a menu   
-  ![user menu](https://github.com/WSU-kduncan/ceg2410-cybersmith-22/blob/5494b5bfc9309739e631eb23440f45cbe620d63e/Linux/Project1/images/menu.JPG)
+  ![user menu](https://github.com/cybersmith22/portfolio/blob/d1e50bd67882c60be8b65f16dbd3c55a4dd7b50c/User-Management-Scripts/images/menu.JPG)
 - Function 1: Add-Single
   - Prompts the user to enter a username 
   - Creates the user account with a randomly generated password
@@ -11,11 +11,11 @@
   - Adds the user to the group, org
   - Gives the user's home directory the group permissions
   - Places account details (username and password) in an output file  
-  ![function 1](https://github.com/WSU-kduncan/ceg2410-cybersmith-22/blob/5494b5bfc9309739e631eb23440f45cbe620d63e/Linux/Project1/images/add-single.JPG)
+  ![function 1](https://github.com/cybersmith22/portfolio/blob/d1e50bd67882c60be8b65f16dbd3c55a4dd7b50c/User-Management-Scripts/images/add-single.JPG)
 - Function 2: Remove-Single
   - Prompts the user to enter a username
   - Deletes the user account and home directory, which removes the user from org  
-  ![function 2](https://github.com/WSU-kduncan/ceg2410-cybersmith-22/blob/2bc2be805dea6b358a4b4395c2084d8060e962dd/Linux/Project1/images/remove-single.JPG)
+  ![function 2](https://github.com/cybersmith22/portfolio/blob/d1e50bd67882c60be8b65f16dbd3c55a4dd7b50c/User-Management-Scripts/images/remove-single.JPG)
 - Function 3: Add-Bulk
   - Prompts the user to enter a filename containing user names
   - For each user in the file:
@@ -24,12 +24,12 @@
     - Adds the user to the group, org
     - Gives the user's home directory the group permissions
     - Places account details (username and password) in an output file  
-  ![function 3](https://github.com/WSU-kduncan/ceg2410-cybersmith-22/blob/2bc2be805dea6b358a4b4395c2084d8060e962dd/Linux/Project1/images/add-bulk.JPG) 
+  ![function 3](https://github.com/cybersmith22/portfolio/blob/d1e50bd67882c60be8b65f16dbd3c55a4dd7b50c/User-Management-Scripts/images/add-bulk.JPG) 
 - Function 4: Remove-Bulk
   - Prompts the user to enter a filename containing user names
   - For each user in the file:
     - Deletes the user account and home directory, which removes the user from org  
-  ![function 4](https://github.com/WSU-kduncan/ceg2410-cybersmith-22/blob/2bc2be805dea6b358a4b4395c2084d8060e962dd/Linux/Project1/images/remove-bulk.JPG)
+  ![function 4](https://github.com/cybersmith22/portfolio/blob/d1e50bd67882c60be8b65f16dbd3c55a4dd7b50c/User-Management-Scripts/images/remove-bulk.JPG)
 
 ## How to Run the Script
 
