@@ -37,6 +37,7 @@ RAID systems are used to improve performance and prevent data loss from hard dri
   - Cost
   - Replacing failed RAID disk with compatible one   
 
+   
 **Software RAID**: Drives are plugged into a PC's motherboard, a program running on the system maintains the RAID   
 
 **Advantages:**
