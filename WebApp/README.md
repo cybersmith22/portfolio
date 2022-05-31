@@ -1,6 +1,6 @@
 # Web Application
 
-Included is the PHP, CSS, and MySQL code for my shopping website. The `without-Remediations` is what I built while I was first learning to program dynamic webpages. The `with-Remediations` is my fortified version of the same webpage. 
+Included is the PHP, CSS, and MySQL code for my shopping website. The `without-Remediations` is what I built while I was first learning to program dynamic webpages. The `with-Remediations` is my fortified version of the same webpage. The full documents for each phase are available upon request from prospective employers or collaborators. 
 
 ## WebApp without-Remediations 
 
@@ -10,7 +10,7 @@ This web application was a semester long project in my CS3800: Web Development I
 
 ## WebApp with-Remediations
 
-I used the same web application from my Web Development II course for the basis of my semester project in CEG4424: Security Attack and Defenses course. While this version of the webpage does include some security modifications in the code, most of the vulnerabilities were fixed on the Apache server and SQL database backends. This project focuses on detecting, identifying, scoring, and addressing vulnerabilities found in the web application.   
+I used the same web application from my Web Development II course for the basis of my semester project in CEG4424: Security Attack and Defenses class. While this version of the webpage does include some security modifications inside the code, most of the vulnerabilities were fixed on the Apache server and SQL database backend. This project focuses on detecting, identifying, scoring, and addressing vulnerabilities found in the web application.   
    
 This project was seperated into four phases:
 - Phase 1: Creating a secure internal network between virtual machines    
