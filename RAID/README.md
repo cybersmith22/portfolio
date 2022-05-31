@@ -24,7 +24,8 @@ RAID systems are used to improve performance and prevent data loss from hard dri
 
 ## Hardware RAID v. Software RAID
 
-**Hardware RAID**: Drives are plugged into a hardware device, the device manages the RAID configuration    
+### Hardware RAID   
+Drives are plugged into a hardware device, the device manages the RAID configuration    
 
 **Advantages:**
   - Higher read and write performance
@@ -37,8 +38,8 @@ RAID systems are used to improve performance and prevent data loss from hard dri
   - Cost
   - Replacing failed RAID disk with compatible one   
 
-   
-**Software RAID**: Drives are plugged into a PC's motherboard, a program running on the system maintains the RAID   
+### Software RAID   
+Drives are plugged into a PC's motherboard, a program running on the system maintains the RAID   
 
 **Advantages:**
   - Cost
