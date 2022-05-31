@@ -6,7 +6,7 @@ RAID systems are used to improve performance and prevent data loss from hard dri
 ## RAID Levels
 
 - Level 0: Striping   
-  [!level0](link)![image](https://user-images.githubusercontent.com/32077767/171243528-12b59bf5-47ac-4d0a-a261-38d74f452ad9.png)
+  ![level0](https://user-images.githubusercontent.com/32077767/171244737-7486760a-ba44-4533-b870-b66b2c85d0a5.png)
 
   
 
