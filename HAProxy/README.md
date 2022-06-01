@@ -1,10 +1,10 @@
 # HAProxy
 
-HAProxy is a load balancer for TCP and HTTP services the spreads requests across multiple servers.
+HAProxy is a load balancer for TCP and HTTP services that spreads requests across multiple servers.
 
 ## Configuring Web Servers and HAProxy
 
-1. In `/etc/hosts` add the the private IP then the desired hostname, `10.0.1.10 srv1` and `10.0.1.20 srv2`
+1. In `/etc/hosts` add the the private IP, then the desired hostname: `10.0.1.10 srv1` and `10.0.1.20 srv2`
 2. Download PEM for AWS on each system, `chmod 600` to change the permission for the key, use that to ssh into the systems using the private IPs
     - `ssh -i ceg3120-aws-vm.pem ubuntu@10.0.1.10` to ssh into serv1
 	- `ssh -i ceg3120-aws-vm.pem ubuntu@10.0.1.20` to ssh into serv2
@@ -23,7 +23,7 @@ HAProxy is a load balancer for TCP and HTTP services the spreads requests across
     - `sudo systemctl restart haproxy` restarts the HAProxy service
     - using `3.228.164.229` as my resources
 4. Webserver 1 & 2 Configuration
-    - On both srv1 and srv2 `/var/www/html/index.html` was modified to name the server where the file is located.
+    - On both srv1 and srv2 `/var/www/html/index.html` was modified to name the server where the file is located
     - No configurations were set
     - Apache looks for files at `/var/www/html` so that is where the site content files are located
     - `sudo systemctl restart apache2` to restart the apache2 service
