@@ -10,7 +10,7 @@ RAID systems are used to improve performance and prevent data loss from hard dri
   ![level0](https://user-images.githubusercontent.com/32077767/171258752-41cba559-8c3a-4366-9178-b732f208f4b2.png)
 
 - **Level 1: Mirroring**   
-  RAID 1 is best for minimal risk of data loss. Data is mirrored / duplicated amoung disks, providing fault tolerance. Increase in read operation, but slow write performance.   
+  RAID 1 is best for minimal risk of data loss. Data is mirrored / duplicated among disks, providing fault tolerance. Read speed is equal to RAID 0, but has slower write performance.   
   ![level1](https://user-images.githubusercontent.com/32077767/171258805-22cb0a6a-98e6-4b70-99fd-d65b5ec0b74a.png)   
 
 - **Level 5: Striping with Parity**   
@@ -22,10 +22,10 @@ RAID systems are used to improve performance and prevent data loss from hard dri
   ![level6](https://user-images.githubusercontent.com/32077767/171258908-78935777-3ae2-4a88-aca2-8de97cfadda3.png)  
 
 
-## Hardware RAID v. Software RAID
+## Hardware RAID vs Software RAID
 
 ### Hardware RAID   
-Drives are plugged into a hardware device, the device manages the RAID configuration    
+Drives are plugged into a hardware device, and the device manages the RAID configuration    
 
 **Advantages:**
   - Higher read and write performance
@@ -35,14 +35,14 @@ Drives are plugged into a hardware device, the device manages the RAID configura
   - Encryption availablity     
 
 **Disadvantages:** 
-  - Cost
+  - Higher cost compared to Software RAID
   - Replacing failed RAID disk with compatible one   
 
 ### Software RAID   
-Drives are plugged into a PC's motherboard, a program running on the system maintains the RAID   
+Drives are plugged into a PC's motherboard, and a program running on the system maintains the RAID   
 
 **Advantages:**
-  - Cost
+  - Lower cost compared to Hardware RAID
   - Supports more drives   
 
 **Disadvantages:**
